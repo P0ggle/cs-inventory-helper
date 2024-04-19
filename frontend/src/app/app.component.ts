@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.http
-      .get<{ message: string }>("http://localhost:5100/api/data")
+      .get<{ message: string }>("http://backend:5100/api/data") // Update URL to use service name 'backend'
       .subscribe((data) => {
         this.message = data.message;
       });
