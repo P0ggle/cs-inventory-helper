@@ -1,23 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { DataService } from "./data.service";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"], // Include this line if you have CSS specific to this component
 })
-export class AppComponent implements OnInit {
-  message = "";
-
-  constructor(private dataService: DataService) {}
-
-  ngOnInit() {
-    this.dataService.fetchData().subscribe({
-      next: (data) => {
-        this.message = data.message;  // Directly assign the object
-      },
-      error: (err) => {
-        console.error("Failed to fetch data:", err);
-      },
-    });
-  }
+export class AppComponent {
+  title = "Angular App"; // A simple property to display in the template
 }

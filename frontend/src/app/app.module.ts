@@ -10,9 +10,13 @@ import {
 } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { ShowWeaponDetailsComponent } from "./components/show-weapon-details/show-weapon-details.component"; // Ensure the path is correct
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ShowWeaponDetailsComponent, // Added ShowWeaponDetailsComponent here
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [provideClientHydration(), provideHttpClient(withFetch())],
   bootstrap: [AppComponent],
