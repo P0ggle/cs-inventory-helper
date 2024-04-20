@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.dataService.fetchData().subscribe({
       next: (data) => {
-        this.message = data.message;
+        this.message = data.message;  // Directly assign the object
       },
       error: (err) => {
         console.error("Failed to fetch data:", err);
