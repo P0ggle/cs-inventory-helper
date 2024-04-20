@@ -22,7 +22,7 @@ def save_data(data, filename):
     except IOError as e:
         print(f"An error occurred when writing to file: {e}")
 
-url = 'https://bymykel.github.io/CSGO-API/api/en/skins.json'
+url = 'https://bymykel.github.io/CSGO-API/api/en/skins_not_grouped.json'
 
 data = fetch_data(url)
 
