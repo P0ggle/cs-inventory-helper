@@ -1,0 +1,13 @@
+#wrapper {
+  background-color: gray;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#wrapper pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
