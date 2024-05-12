@@ -11,9 +11,10 @@ import {
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ShowWeaponDetailsComponent } from "./components/show-weapon-details/show-weapon-details.component";
+import { TestingComponent } from './testing/testing.component';
 
 @NgModule({
-  declarations: [AppComponent, ShowWeaponDetailsComponent],
+  declarations: [AppComponent, ShowWeaponDetailsComponent, TestingComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [provideClientHydration(), provideHttpClient(withFetch())],
   bootstrap: [AppComponent],

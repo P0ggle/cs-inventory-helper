@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { DataService } from "../../data.service";
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../data.service';
 
 @Component({
-  selector: "app-show-weapon-details",
-  templateUrl: "./show-weapon-details.component.html",
-  styleUrl: "./show-weapon-details.component.css",
+  selector: 'app-show-weapon-details',
+  templateUrl: './show-weapon-details.component.html',
+  styleUrl: './show-weapon-details.component.css',
 })
 export class ShowWeaponDetailsComponent implements OnInit {
-  message = "";
+  message = '';
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.fetchData().subscribe({
@@ -17,7 +17,7 @@ export class ShowWeaponDetailsComponent implements OnInit {
         this.message = data.message; // Directly assign the object
       },
       error: (err) => {
-        console.error("Failed to fetch data:", err);
+        console.error('Failed to fetch data:', err);
       },
     });
   }
