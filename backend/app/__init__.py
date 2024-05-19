@@ -1,8 +1,11 @@
+from pathlib import Path
+
 from flask import Flask
 from flask_cors import CORS
 from flask_pymongo import PyMongo
 
 from .routes import setup_routes
+from .services import insert_data_if_empty, load_data_from_json
 
 
 def create_app():
@@ -15,20 +18,11 @@ def create_app():
     mongo = PyMongo(app)
 
     setup_routes(app, mongo)
-    add_dummy_data(mongo.db)
+
+    base_dir = Path(__file__).resolve().parent
+    data_path = base_dir.parent / "data.json"
+
+    data = load_data_from_json(data_path)
+    insert_data_if_empty(mongo, data)
 
     return app
-
-
-def add_dummy_data(db):
-    test_collection = db.testcollection
-
-    if test_collection.count_documents({}) == 0:
-        dummy_users = [
-            {"name": "Alice", "age": 30},
-            {"name": "Bob", "age": 25},
-            {"name": "Charlie", "age": 35},
-            {"name": "Mark", "age": 22},
-        ]
-
-        test_collection.insert_many(dummy_users)
