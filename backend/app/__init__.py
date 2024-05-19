@@ -21,9 +21,9 @@ def create_app():
 
 
 def add_dummy_data(db):
-    users_collection = db.testcollection
+    test_collection = db.testcollection
 
-    if users_collection.count_documents({}) == 0:
+    if test_collection.count_documents({}) == 0:
         dummy_users = [
             {"name": "Alice", "age": 30},
             {"name": "Bob", "age": 25},
@@ -31,4 +31,4 @@ def add_dummy_data(db):
             {"name": "Mark", "age": 22},
         ]
 
-        users_collection.insert_many(dummy_users)
+        test_collection.insert_many(dummy_users)
