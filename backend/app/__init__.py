@@ -10,7 +10,7 @@ def create_app():
     CORS(app)
 
     app.config["MONGO_URI"] = (
-        "mongodb://mongoadmin:secret@mongo:27017/admin?authSource=admin"
+        "mongodb://mongoadmin:secret@mongo:27017/testing?authSource=admin"
     )
     mongo = PyMongo(app)
 
@@ -21,7 +21,7 @@ def create_app():
 
 
 def add_dummy_data(db):
-    users_collection = db.users
+    users_collection = db.testcollection
 
     if users_collection.count_documents({}) == 0:
         dummy_users = [
