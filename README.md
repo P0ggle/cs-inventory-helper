@@ -4,7 +4,7 @@ Welcome to the CS2 Skin Catalog project! This project aims to provide a comprehe
 
 ## Overview
 
-This project consists of a Flask backend and an AngularJS frontend, providing a seamless user experience for browsing and exploring CS2 item skins. The backend serves as the API endpoint for accessing the dataset, while the frontend offers an intuitive interface for users to interact with the data.
+This project consists of a Flask backend and an AngularJS frontend using mongodb, providing a seamless user experience for browsing and exploring CS2 item skins. The backend serves as the API endpoint for accessing the dataset, while the frontend offers an intuitive interface for users to interact with the data.
 
 ## Installation
 
