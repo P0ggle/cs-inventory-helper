@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  private backendUrl = 'http://backend:5100/api/cs-skins/first';
+  private baseUrl = 'http://backend:5100/api';
 
   constructor(private http: HttpClient) { }
 
-  fetchData(): Observable<{ message: string }> {
-    return this.http.get<{ message: string }>(this.backendUrl);
+  fetchData(): Observable<any> {
+    const url = `${this.baseUrl}/cs-skins/first`;
+    return this.http.get<any>(url);
   }
 }
