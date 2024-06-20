@@ -8,15 +8,18 @@ import { DataService } from '../../data.service';
 })
 export class ShowWeaponDetailsComponent implements OnInit {
   weaponDetails: any;
+  imageUrl: string | undefined;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.fetchData().subscribe({
+    this.dataService.getWeapon().subscribe({
       next: (data) => {
         console.log('Received data: ', data);
         this.weaponDetails = data;
+        this.imageUrl = data.image;
         console.log('Assigned weaponDetails: ', this.weaponDetails);
+        console.log('Image URL: ', this.imageUrl);
       },
       error: (err) => {
         console.error('Failed to fetch data:', err);

@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  fetchData(): Observable<any> {
+  getWeapon(): Observable<any> {
     const url = `${this.baseUrl}/cs-skins/first`;
     return this.http.get<any>(url);
   }
